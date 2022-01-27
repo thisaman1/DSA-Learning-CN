@@ -12,7 +12,7 @@ class node{
     }
 };
 
-void printmiddle(node *head,node *tail){
+int printmiddle(node *head,node *tail){
     node* slow = head;
     node* fast = head->next;
     
@@ -20,8 +20,8 @@ void printmiddle(node *head,node *tail){
         slow = slow->next;
         fast = fast->next->next;
     }
-    cout<<slow->data;
-    
+    //cout<<slow->data;
+    return slow->data;
 }
 
 void takeinput(){

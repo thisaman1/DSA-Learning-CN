@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 class node{
@@ -42,7 +42,7 @@ node* takeinput(){
         }
         cin>>data;
     }
-    cout<<count<<endl;
+    //cout<<count<<endl;
     return head;
 }
 node* Insertnode(node* head, int i,int data){
@@ -107,17 +107,29 @@ void print(node *head){
     }
     cout<<endl;
 }
+
+int count(node *temp){
+    int count =0;
+    while(temp!= NULL){
+        temp = temp->next;
+        count++;
+    }
+    return count;
+}
+
 int main(){
 
     node *head = takeinput();
     print(head);
+    cout<<count(head)<<endl;
+    /*
     int i,data;
     cin>>i>>data;
     //head = Insertnode(head,i,data);
     //head = deletenode(head,i);
     head = Insertnode_rec(head,i,data);
     print(head);
-    /*
+    
     //stastically
     node n1(1);
     node *head = &n1;
