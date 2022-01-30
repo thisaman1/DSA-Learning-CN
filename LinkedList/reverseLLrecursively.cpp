@@ -73,6 +73,20 @@ node* reverseLL_3(node* head){
     return smallans;
 }
 
+node* reverseLL_4(node* head){              //Iterative approach
+    node* previous = NULL;
+    node* current = head;
+    node* n =  head->next;
+
+    while(current != NULL){
+        current->next = previous;
+        previous = current;
+        current = n;
+        n = n->next;
+    }
+    return previous;
+}
+
 
 node* takeinput(){
     int data;
@@ -108,7 +122,7 @@ node* takeinput(){
     return head;
 }
 
-void print(node*head){
+void print(node* head){
     node* temp = head;
     while(temp != NULL){
         cout<<temp->data<<" ";
@@ -119,7 +133,7 @@ void print(node*head){
 
 int main(){
     node* head = takeinput();
-    node* rev = reverseLL_3(head);
+    node* rev = reverseLL_4(head);
     print(rev);
 
     return 0;
