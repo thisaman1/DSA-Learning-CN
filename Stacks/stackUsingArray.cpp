@@ -2,7 +2,6 @@
 #include<climits>
 using namespace std;
 
-
 class stackUsingArray{
 
     int *data;
@@ -35,7 +34,7 @@ class stackUsingArray{
 
     //Deletion using pop
     int pop(){
-        if(isEmpty){
+        if(isEmpty()){
             cout<<"Stack is empty"<<endl;
             return INT_MIN;
         }
@@ -45,7 +44,7 @@ class stackUsingArray{
 
     //Access to top element using top
     int top(){
-        if(isEmpty){
+        if(isEmpty()){
             cout<<"Stack is empty"<<endl;
             return INT_MIN;
         }
@@ -63,3 +62,28 @@ class stackUsingArray{
     }
 
 };
+
+
+int main(){
+    stackUsingArray s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+    s.push(5);
+    s.push(6);
+    s.push(7);
+    s.push(8);
+
+    s.pop();
+    s.pop();
+    s.pop();
+    s.pop();
+    s.pop();
+
+    cout<<s.isEmpty()<<endl;
+
+    cout<<s.size()<<endl;
+
+    cout<<s.top()<<endl;
+}
